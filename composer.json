@@ -1,0 +1,41 @@
+{
+    "name": "frc/wp-assets",
+    "type": "wordpress-muplugin",
+    "description": "Helper for assets.",
+    "homepage": "https://www.frantic.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joonas Meriläinen",
+            "email": "joonas.merilainen@frantic.com"
+        }
+    ],
+    "keywords": [
+        "wordpress"
+    ],
+    "require": {
+        "php": ">=7.0",
+        "composer/installers": "~1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Frc\\WP\\Assets\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "vendor/bin/phpunit"
+        ]
+    }
+}
