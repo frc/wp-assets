@@ -10,7 +10,7 @@ class Asset
 
     public function __construct($path, $manifest)
     {
-        $this->path = $path;
+        $this->path = ltrim($path, '/');
         $this->manifest = $manifest;
     }
 

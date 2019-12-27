@@ -18,8 +18,19 @@ class Manifest implements ArrayAccess
             ? json_decode(file_get_contents($manifest), true)
             : [];
 
+        $this->manifest = $this->normalizeKeys($this->manifest);
+
         $this->uri = $uri;
         $this->path = $path;
+    }
+
+    protected function normalizeKeys($manifest) {
+        $items = [];
+        foreach($manifest as $key => $value) {
+            $key = ltrim($key, '/');
+            $items[$key] = $value;
+        }
+        return $items;
     }
 
     public function offsetExists($key)
