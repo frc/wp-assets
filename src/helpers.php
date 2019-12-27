@@ -3,7 +3,7 @@
 use Frc\WP\Assets\Factory;
 use Frc\WP\Assets\Options;
 
-function asset($path)
+function asset($asset)
 {
     static $factory;
 
@@ -24,5 +24,5 @@ function asset($path)
 
     }
 
-    return $factory->asset($path);
+    return $factory->asset($asset);
 }
