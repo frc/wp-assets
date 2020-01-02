@@ -8,20 +8,16 @@ function asset($asset)
     static $factory;
 
     if (empty($factory)) {
-
         $options = new Options;
 
-        $base = ltrim($options->get('dist', 'assets'), '/');
+        $root = ltrim($options->get('root', 'assets'), '/');
         $file = ltrim($options->get('file', 'assets.json'), '/');
 
-        $manifest = $options->get('manifest', get_theme_file_path("/$base/$file"));
-        $uri = $options->get('uri', get_theme_file_uri("/$base"));
-        $path = $options->get('path', get_theme_file_path("/$base"));
-
-        $path = '/' . ltrim($path, '/');
+        $path =  '/' . ltrim($options->get('path', get_theme_file_path("/$root")), '/');
+        $manifest = $options->get('manifest', "$path/$file");
+        $uri = $options->get('uri', get_theme_file_uri("/$root"));
 
         $factory = Factory::make($manifest, $uri, $path);
-
     }
 
     return $factory->asset($asset);
