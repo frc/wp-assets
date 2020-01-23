@@ -49,11 +49,29 @@ class AssetTest extends TestCase
     }
 
     /** @test */
+    public function it_should_check_exists_with_query_string()
+    {
+        $this->assertEquals(
+            true,
+            $this->factory()->asset('versioned.js')->exists()
+        );
+    }
+
+    /** @test */
     public function it_should_get_contents()
     {
         $this->assertStringContainsString(
             'console.log',
             $this->factory()->asset('file.js')->contents()
+        );
+    }
+
+    /** @test */
+    public function it_should_get_contents_with_query()
+    {
+        $this->assertStringContainsString(
+            'console.log',
+            $this->factory()->asset('versioned.js')->contents()
         );
     }
 }

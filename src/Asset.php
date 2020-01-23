@@ -31,7 +31,9 @@ class Asset
 
     public function path()
     {
-        return rtrim($this->manifest->path(), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . ltrim($this->versioned(), DIRECTORY_SEPARATOR);
+        $path = rtrim($this->manifest->path(), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . ltrim($this->versioned(), DIRECTORY_SEPARATOR);
+        // Remove query string from path
+        return strtok($path, '?');
     }
 
     public function exists()
