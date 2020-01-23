@@ -3,7 +3,7 @@
 use Frc\WP\Assets\Factory;
 use Frc\WP\Assets\Options;
 
-function asset($asset)
+function frc_asset($asset)
 {
     static $factory;
 

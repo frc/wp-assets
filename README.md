@@ -4,18 +4,18 @@ This is a must-use plugin used via composer, plugin activation not required.
 
 ## Usage
 
-Call function `asset($file)`. For example: 
+Call function `frc_asset($file)`. For example: 
 
-`wp_enqueue_style('styles', asset('styles/main.css'));`
+`wp_enqueue_style('styles', frc_asset('styles/main.css'));`
 
 Available methods: 
-* `asset($file)->uri()`
-* `asset($file)->path()`
-* `asset($file)->exists()`
-* `asset($file)->notExists()`
-* `asset($file)->contents()`
+* `frc_asset($file)->uri()`
+* `frc_asset($file)->path()`
+* `frc_asset($file)->exists()`
+* `frc_asset($file)->notExists()`
+* `frc_asset($file)->contents()`
 
-Casting `asset($file)` to a string will return asset's URI.  
+Casting `frc_asset($file)` to a string will return asset's URI.  
 
 Optional configuration using `add_theme_support` function.
 
