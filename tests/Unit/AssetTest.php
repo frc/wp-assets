@@ -57,6 +57,15 @@ class AssetTest extends TestCase
         );
     }
 
+     /** @test */
+     public function it_should_check_exists_with_hash()
+     {
+         $this->assertEquals(
+             true,
+             $this->factory()->asset('hashed.js')->exists()
+         );
+     }
+
     /** @test */
     public function it_should_get_contents()
     {
