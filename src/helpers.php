@@ -20,5 +20,6 @@ function frc_asset($asset)
         $factory = Factory::make($manifest, $uri, $path);
     }
 
-    return $factory->asset($asset);
+    $addHashToFilename = $options->get('addHashToFilename', false);
+    return $factory->asset($asset, $addHashToFilename);
 }
