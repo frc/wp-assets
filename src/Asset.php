@@ -49,9 +49,10 @@ class Asset
         }
 
         $basename = basename($parsed['path']);
+        $path     = str_replace($basename, '', $parsed['path']);
         $filename = substr_replace($basename, '.hash.' . $query, strrpos($basename, "."), 0);
 
-        return $filename;
+        return $path . $filename;
     }
 
     public function path()
