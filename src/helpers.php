@@ -6,9 +6,9 @@ use Frc\WP\Assets\Options;
 function frc_asset($asset)
 {
     static $factory;
+    $options = new Options;
 
     if (empty($factory)) {
-        $options = new Options;
 
         $root = ltrim($options->get('root', 'assets'), '/');
         $file = ltrim($options->get('file', 'assets.json'), '/');
