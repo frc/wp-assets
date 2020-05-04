@@ -11,9 +11,9 @@ class Factory
         $this->manifest = $manifest;
     }
 
-    public function asset($path)
+    public function asset($path, $addHashToFilename = false)
     {
-        return new Asset($path, $this->manifest);
+        return new Asset($path, $this->manifest, $addHashToFilename);
     }
 
     public static function make($manifest, $uri, $path)
